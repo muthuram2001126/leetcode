@@ -2059,3 +2059,23 @@ class Solution {
         return maxProfit;
     }
 }//this is an another easy method
+
+78)Best Time to Buy and Sell Stock II
+class Solution {
+    public int maxProfit(int[] prices) {
+   
+        int buy = Integer.MAX_VALUE;
+        int result = 0;
+
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] < buy) {
+                buy = prices[i];
+            } else if (prices[i] - buy > 0) {
+                result += prices[i] - buy;
+                buy = prices[i];
+            }
+        }
+
+        return result;
+    }
+}
