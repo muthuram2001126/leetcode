@@ -2329,12 +2329,13 @@ class Solution {
 
 
 87)Integer to roman (easy solution)
-
 class Solution {
     public String intToRoman(int num) {
         int[] values = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
         String[] romans = {"M", "CM", "D","CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
-    
+        //easy ah endha symbols nevagam vechukalam avaga kudukura roman symbols nevagam erundha podhu
+        //adhu vechu nama edhu eludhikala like 1-I,next 5-V ah apo 4ku -IV next 9 ku-IX andha 1st roman ahum namaku thevaya eruku number ah um like 4 and 9 ku kela erukuradhaum sethi eludhuna podu
+
         StringBuilder sb = new StringBuilder();
         int i = 0;
 
