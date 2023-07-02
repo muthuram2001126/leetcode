@@ -2123,3 +2123,22 @@ class Solution {
         
     }
 }
+
+
+80)H-index
+class Solution {
+    public int hIndex(int[] citations) {
+  
+        int n = citations.length;
+        Arrays.sort(citations); // Sort the citations array in ascending order
+
+        int result = 0;
+
+        for (int i = 0; i < n; i++) {
+            int currHIndex = Math.min(citations[i], n - i); // Minimum of the citation count and remaining array size
+            result = Math.max(result, currHIndex); // Update the maximum h-index
+        }
+
+        return result;
+    }
+}
