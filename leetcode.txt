@@ -2079,3 +2079,47 @@ class Solution {
         return result;
     }
 }
+
+79)jump game or min jump for anything related use this :
+class Solution {
+    public int jump(int[] nums) {
+       
+
+        int n =nums.length;
+
+        if (n <= 1) {
+            return 0; // No jumps needed for an empty array or array with a single element
+        }
+
+        if (nums[0] == 0) {
+            return -1; // Cannot jump from the starting position if the first element is 0
+        }
+
+        int maxReach = nums[0]; // Maximum index reachable from the current position
+        int steps = nums[0]; // Remaining steps at the current position
+        int jumps = 1; // Minimum jumps required to reach the current position
+
+        for (int i = 1; i < n; i++) {
+            if (i == n - 1) {
+                return jumps; // Reached the last position, return the minimum jumps
+            }
+
+            maxReach = Math.max(maxReach, i + nums[i]); // Update the maximum reachable index
+
+            steps--; // Decrement the remaining steps
+
+            if (steps == 0) {
+                jumps++; // Required a jump to reach the current position
+
+                if (i >= maxReach) {
+                    return -1; // Cannot reach further, return -1
+                }
+
+                steps = maxReach - i; // Reset the steps using the maximum reachable index
+            }
+        }
+
+        return -1; // Cannot reach the last position
+        
+    }
+}
