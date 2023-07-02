@@ -2369,3 +2369,47 @@ class Solution {
         return sIndex == s.length();
     }
 }
+
+89)longest palindrome in a string:
+class Solution{
+    static String longestPalin(String S){
+        // code here
+        // StringBuilder result = new StringBuilder();
+        // for (int i = 0; i < S.length(); i++) {
+        //     for (int j = i + 1; j <= S.length(); j++) {
+        //         StringBuilder temp = new StringBuilder(S.substring(i, j));
+        //         StringBuilder reversed = new StringBuilder(temp).reverse();
+        //         if (temp.toString().equals(reversed.toString()) && temp.length() > result.length()) {
+        //             result = temp;
+        //         }
+        //     }
+        // }
+        // return result.toString();//78/173 test case
+        String result = "";
+        for (int i = 0; i < S.length(); i++) {
+            for (int j = S.length(); j > i; j--) {
+                String current = S.substring(i, j);
+                if (isPalindrome(current) && current.length() > result.length()) {
+                    result = current;
+                    break; // Break the inner loop if a longer palindrome is found
+                }
+            }
+        }
+        return result;
+        }
+
+        static boolean isPalindrome(String str) {
+            int left = 0;
+            int right = str.length() - 1;
+            while (left < right) {
+                if (str.charAt(left) != str.charAt(right)) {
+                    return false;
+                }
+                left++;
+                right--;
+            }
+            return true;//127/173 test case
+    
+        
+        }
+}
