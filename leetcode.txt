@@ -1,4 +1,4 @@
-TWO SUM:
+1)TWO SUM:
 
 class Solution {
     public int[] twoSum(int[] nums, int target) {
@@ -43,7 +43,7 @@ class Solution {
     }
 }
 
-ADD TWO NUMBER OF LINKDED LIST:
+2)ADD TWO NUMBER OF LINKDED LIST:
 
  class Solution {
     // Add Two Numbers (Java improved)
@@ -67,7 +67,7 @@ ADD TWO NUMBER OF LINKDED LIST:
     }
     }
 
-LONGEST SUBSTRING WITHOUT REPEATING CHARACTER:
+3)LONGEST SUBSTRING WITHOUT REPEATING CHARACTER:
 public class Solution {
     public int lengthOfLongestSubstring(String s) {
         int n = s.length();
@@ -103,7 +103,7 @@ public class Solution {
     }
 }
 
-MEDIAN OF TWO SORTED ARRAY(HARD):
+4)MEDIAN OF TWO SORTED ARRAY(HARD):
 class Solution {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int c=nums1.length+nums2.length;
@@ -130,7 +130,7 @@ class Solution {
     }
 }
 
-REVERSE AN INTEGER:
+5)REVERSE AN INTEGER:
 class Solution {
     public int reverse(int x) {
         int rev = 0;
@@ -145,7 +145,7 @@ class Solution {
     }
 }
 
-PALINDROME NUMBER:
+6)PALINDROME NUMBER:
 class Solution {
     public boolean isPalindrome(int x) {
         int n=x;
@@ -171,7 +171,7 @@ class Solution {
     }
 }
 
-CONTAINER WITH MOST WATER:
+7)CONTAINER WITH MOST WATER:
 class Solution {
     public int maxArea(int[] height) {
         int n=height.length;
@@ -196,7 +196,7 @@ class Solution {
     }
 }
 
-ROMAN TO INTEGER:
+8)ROMAN TO INTEGER:
 class Solution {
     public int romanToInt(String s) {
      
@@ -229,7 +229,7 @@ class Solution {
 // appadi erundha we can add
 // ellna subtract pannanu edha concept
 
-LONGEST COMMON PREFIX:
+9)LONGEST COMMON PREFIX:
 class Solution {
     public String longestCommonPrefix(String[] strs) {
         String s=strs[0];
@@ -260,7 +260,7 @@ class Solution {
     }
 }
 
-3SUM:
+10)3SUM:
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
         HashSet<List<Integer>> arr=new HashSet<List<Integer>>();
@@ -324,7 +324,7 @@ class Solution {
 // endha new code teriyadhu mela potadhu nearly ok but time limit exceeded for 312/320 testcase
 
 
-LETTER COMBINATION OF PHONE NUMBER:
+11)LETTER COMBINATION OF PHONE NUMBER:
 // class Solution {
 //     public List<String> letterCombinations(String digits) {
 //         List<String> group=new ArrayList<String>();
@@ -404,7 +404,7 @@ IF THE NUMBER LENGTH IS LESS THAT OR EQUAL TO 0 THEN PRINT NOTHING
 IF THE NUMBER LENGTH IS EQUAL TO 1 THEN PRINT THAT NUMBERS ASSOCIATED CHARACTER IN HASHMAP
 IF THE NUMBER IS GREATER THAN 1 THEN TAKE EACH NUMBER AND STORE ITS ASSOCIATED VALUES IN ARRAY LIST AND ITERATER TO PRINT
 
-REMOVE NTH NODE FROM THE END OF THE LINKED LIST:
+12)REMOVE NTH NODE FROM THE END OF THE LINKED LIST:
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -444,7 +444,7 @@ class Solution {
     }
 }
 
-VALID PARENTHESIS:
+13)VALID PARENTHESIS:
 class Solution {
     public boolean isValid(String s) {
         
@@ -468,7 +468,7 @@ class Solution {
 }
 
 
-MERGE TWO SORTED LINKED LIST:
+14)MERGE TWO SORTED LINKED LIST:
 // /**
 //  * Definition for singly-linked list.
 //  * public class ListNode {
@@ -510,7 +510,7 @@ class Solution{
 
 }
 
-SWAP NODES IN PAIR IN LINKED LIST:
+15)SWAP NODES IN PAIR IN LINKED LIST:
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -535,7 +535,7 @@ class Solution {
     }
 }
 
-REMOVE DUPLICATE FROM A SORTED ARRAY:
+16)REMOVE DUPLICATE FROM A SORTED ARRAY:
 class Solution {
     public int removeDuplicates(int[] nums) {
         int insertIndex = 1;
@@ -558,7 +558,8 @@ class Solution {
 
     }
 }
-REMOVE PARTICULAR ELEMENT IN AN ARRAY WITHOUT USING SEPERATE ARRAY:
+
+17)REMOVE PARTICULAR ELEMENT IN AN ARRAY WITHOUT USING SEPERATE ARRAY:
 
 class Solution{
 public int removeElement(int[] nums, int val) {
@@ -578,7 +579,7 @@ public int removeElement(int[] nums, int val) {
     return n;
 }}
 
-FIND THE 1ST AND LAST POSTION OF AN ELEMENT IN A SORTED ARRAY:
+18)FIND THE 1ST AND LAST POSTION OF AN ELEMENT IN A SORTED ARRAY:
 class Solution {
     public int[] searchRange(int[] nums, int target) {
         int[] n=new int[2];
@@ -600,7 +601,7 @@ class Solution {
     }
 }
 
-SEARCH INSERT POSITION :
+19)SEARCH INSERT POSITION :
 class Solution {
     public int searchInsert(int[] nums, int target) {
         int n=0;
@@ -625,7 +626,7 @@ class Solution {
     }
 }
 
-JUMP GAME II
+20)JUMP GAME II
 class Solution {
     public int jump(int[] nums) {
         // The starting range of the first jump is [0, 0]
@@ -649,7 +650,7 @@ class Solution {
 }
 
 
-JUMP GAME:
+21)JUMP GAME:
 class Solution{
     public boolean canJump(int[] nums){
         if(nums.length==0) return false;
@@ -665,7 +666,7 @@ class Solution{
     }
 }
 
-LENGTH OF LAST WORD IN A STRING:
+22)LENGTH OF LAST WORD IN A STRING:
 class Solution {
     public int lengthOfLastWord(String s) {
         s=s.trim();
@@ -676,7 +677,7 @@ class Solution {
     }
 }
 
-PLUS ONE:
+23)PLUS ONE:
 class Solution {
     public int[] plusOne(int[] digits) {
         int n=digits.length;
@@ -694,7 +695,7 @@ class Solution {
     }
 }
 
-SQUARE ROOT:
+24)SQUARE ROOT:
 class Solution {
     public int mySqrt(int x) {
     if (x == 0) return 0;
@@ -705,7 +706,7 @@ class Solution {
 }
 }
 
-CLIMBING STAIRS:
+25)CLIMBING STAIRS:
 class Solution {
     public int climbStairs(int n) {
         // base cases
@@ -726,7 +727,7 @@ class Solution {
     }
 }
 
-REMOVE DUPLICATES FROM A SORTED ARRAY:
+26)REMOVE DUPLICATES FROM A SORTED ARRAY:
 THIS IS USED TO KEEP ONLY ONE ELEMENT TO REPEAT ATMOST TWICE IN AN ARRAY 
 class Solution {
     public int removeDuplicates(int[] nums) {
@@ -742,7 +743,7 @@ class Solution {
     }
 }
 
-REMOVE DUPLICATES IN THE SORTED LINKED LIST:
+27)REMOVE DUPLICATES IN THE SORTED LINKED LIST:
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -761,7 +762,7 @@ class Solution {
 }
 }
 
-MERGE SORTED ARRAY:
+28)MERGE SORTED ARRAY:
 class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         int p1 = m-1 , p2 = n-1 ,i = m+n-1;
@@ -776,7 +777,7 @@ class Solution {
        }
 }
 
-SAME TREE:
+29)SAME TREE:
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -811,7 +812,7 @@ class Solution {
 }
 
 
-PASCAL'S TRIGANGLE:
+30)PASCAL'S TRIGANGLE:
 class Solution {
     public List<List<Integer>> generate(int numRows) {
     
@@ -845,7 +846,7 @@ class Solution {
     }
 }
 
-Pascal's Triangle II
+31)Pascal's Triangle II
 class Solution {
     public List<Integer> getRow(int rowIndex) {
         List<List<Integer>> result =new ArrayList<List<Integer>>();
@@ -879,7 +880,7 @@ class Solution {
     }
 }
 
-VALID PALINDROME:
+32)VALID PALINDROME:
 class Solution{
     public boolean isPalindrome(String s) {
  
@@ -913,7 +914,7 @@ class Solution{
     }
 }
 
-FIND LOOP IN LINKED LIST:
+33)FIND LOOP IN LINKED LIST:
 /**
  * Definition for singly-linked list.
  * class ListNode {
@@ -941,7 +942,7 @@ public class Solution {
 }
 
 
- Linked List Cycle II
+ 34)Linked List Cycle II
 // /**
 //  * Definition for singly-linked list.
 //  * class ListNode {
@@ -983,7 +984,7 @@ public class Solution {
 }
 
 
-Reverse Words in a String
+35)Reverse Words in a String
 // class Solution {
 //     public String reverseWords(String s) {
 //         // StringBuilder result=new StringBuilder();
@@ -1032,7 +1033,7 @@ public class Solution {
 }
 
 
- Intersection of Two Linked Lists
+36) Intersection of Two Linked Lists
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -1086,7 +1087,7 @@ public class Solution {
     }
 }
 
-Two Sum II - Input Array Is Sorted
+37)Two Sum II - Input Array Is Sorted
 class Solution {
     public int[] twoSum(int[] numbers, int target) {
         int i=0;
@@ -1110,7 +1111,7 @@ class Solution {
     }
 }
 
-Majority Element
+38)Majority Element
 class Solution{
     public int majorityElement(int[] nums){
         int n=nums.length/2;
@@ -1130,7 +1131,7 @@ class Solution{
 }
 
 
-ROTATE ARRAY:
+39)ROTATE ARRAY:
 class Solution {
     public void rotate(int[] nums, int k) {
         int[] rotated = new int[nums.length];
@@ -1142,7 +1143,7 @@ class Solution {
     }
 }
 
-REVERSE A LINKED LIST:
+40)REVERSE A LINKED LIST:
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -1184,7 +1185,7 @@ class Solution {
     }
 }
 
-Contains Duplicate
+41)Contains Duplicate
 class Solution{
         public boolean containsDuplicate(int[] nums) {
 
@@ -1198,7 +1199,7 @@ class Solution{
     }
 }
 
-Summary Ranges
+42)Summary Ranges
 class Solution {
     public List<String> summaryRanges(int[] nums) {
         
@@ -1244,7 +1245,7 @@ class Solution {
     }
 }
 
- Missing Number
+43) Missing Number
 class Solution{
 public static int missingNumber(int[] nums) {
     int sum = nums.length;
@@ -1255,7 +1256,7 @@ public static int missingNumber(int[] nums) {
 }
 
 
-First Bad Version(BINARY SEARCH)
+44)First Bad Version(BINARY SEARCH)
 /* The isBadVersion API is defined in the parent class VersionControl.
       boolean isBadVersion(int version); */
 
@@ -1276,7 +1277,7 @@ public class Solution extends VersionControl {
 }
 
 
-Move Zeroes
+45)Move Zeroes
 class Solution {
     public void moveZeroes(int[] nums) {
         int[] arr=nums.clone();
@@ -1293,7 +1294,7 @@ class Solution {
 }
 
 
-Range Sum Query - Immutable
+46)Range Sum Query - Immutable
 class NumArray {
     public int[] input;
     public NumArray(int[] nums) {
@@ -1319,7 +1320,7 @@ class NumArray {
  */
 
 
-Reverse String
+47)Reverse String
 class Solution {
     public void reverseString(char[] s) {
 
@@ -1338,7 +1339,7 @@ class Solution {
 
 
 
-345. Reverse Vowels of a String
+48)345. Reverse Vowels of a String
 class Solution {
     public String reverseVowels(String s) {
         ArrayList<Character> a=new ArrayList<Character>();
@@ -1366,7 +1367,7 @@ class Solution {
 }
 
 
-Find the Difference
+49)Find the Difference
 class Solution {
     public char findTheDifference(String s, String t) {
  
@@ -1397,7 +1398,7 @@ class Solution {
 }
 
 
-Assign Cookies
+50)Assign Cookies
 class Solution {
     public int findContentChildren(int[] g, int[] s) {
 
@@ -1417,7 +1418,7 @@ class Solution {
     }
 }
 
-Keyboard Row
+51)Keyboard Row
 class Solution {
     public List<String> result=new ArrayList<String>();
     public String str1="qwertyuiop";
@@ -1452,7 +1453,7 @@ class Solution {
 
 // both the codes are correct 
 
-Detect Capital
+52)Detect Capital
 class Solution {
     public boolean detectCapitalUse(String word) {
         String word1=word.toUpperCase();
@@ -1475,7 +1476,7 @@ class Solution {
 }
 
 
-Reverse Words in a String III
+53)Reverse Words in a String III
 class Solution {
     public String reverseWords(String s) {
         StringBuilder result=new StringBuilder();
@@ -1497,7 +1498,7 @@ class Solution {
 }
 
 
-Permutation in String
+54)Permutation in String
 public class Solution {
     public boolean checkInclusion(String s1, String s2) {
         s1 = sort(s1);
@@ -1516,7 +1517,7 @@ public class Solution {
     }
 }
 
-Distribute Candies
+55)Distribute Candies
 class Solution {
     public int distributeCandies(int[] candyType) {
         int a=candyType.length/2;
@@ -1537,7 +1538,7 @@ class Solution {
 }
 
 
-649. Dota2 Senate
+56))649. Dota2 Senate
 see diagramatic explanation in leetcode solution side,click java,then see diagramatic explanation in leetcode qn number is 649
 
 class Solution {
@@ -1573,7 +1574,7 @@ class Solution {
 // kadasila endha arraylist empty agama eruko adhudha ans string
 
 
-BINARY SEARCH:
+57)BINARY SEARCH:
 class Solution {
     public int search(int[] nums, int target) {
         int left = 0; // initialize left pointer to 0
@@ -1596,7 +1597,7 @@ class Solution {
 }
 
 
-733. Flood Fill
+58))733. Flood Fill
 class Solution {
     public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
         int color = image[sr][sc];
@@ -1616,7 +1617,7 @@ class Solution {
 }
 
 
-Middle of the Linked List
+59)Middle of the Linked List
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -1642,7 +1643,7 @@ class Solution {
 }
 
 
-1470. Shuffle the Array
+60))1470. Shuffle the Array
 class Solution {
     public int[] shuffle(int[] nums, int n) {
         int[] arr=new int[nums.length];
@@ -1661,7 +1662,7 @@ class Solution {
 }
 
 
-Count Odd Numbers in an Interval Range
+61)Count Odd Numbers in an Interval Range
 class Solution {
     public int countOdds(int low, int high) {
         int count=0;
@@ -1682,7 +1683,7 @@ class Solution {
 }
 
 
-Kth Missing Positive Number
+62)Kth Missing Positive Number
 class Solution {
     public int findKthPositive(int[] arr, int k) {
         int[] arr1=new int[2000];
@@ -1710,7 +1711,7 @@ class Solution {
 }
 
 
-Sign of the Product of an Array
+63)Sign of the Product of an Array
 
 class Solution{
 public int arraySign(int[] nums) {
@@ -1731,7 +1732,7 @@ public int arraySign(int[] nums) {
 }
 
 
-Maximum Ice Cream Bars
+64)Maximum Ice Cream Bars
 class Solution {
     public int maxIceCream(int[] costs, int coins) {
         int count=0;
@@ -1746,7 +1747,7 @@ class Solution {
     }
 }
 
- Find Triangular Sum of an Array
+ 65)Find Triangular Sum of an Array
 class Solution {
     public int triangularSum(int[] nums) {
         ArrayList<Integer> arr=new ArrayList<>();
@@ -1775,7 +1776,7 @@ class Solution {
 }
 
 
-Maximum Bags With Full Capacity of Rocks
+66)Maximum Bags With Full Capacity of Rocks
 class Solution {
     public int maximumBags(int[] capacity, int[] rocks, int additionalRocks) {
         int n=capacity.length;
@@ -1797,7 +1798,7 @@ class Solution {
 }
 
 
-Longest Subsequence With Limited Sum
+67)Longest Subsequence With Limited Sum
 class Solution {
     public int[] answerQueries(int[] nums, int[] queries) {
         // Sort 'nums'
@@ -1825,7 +1826,7 @@ class Solution {
 }
 
 
-Alternating Digit Sum
+68)Alternating Digit Sum
 class Solution {
     public int alternateDigitSum(int n) {
         ArrayList<Integer> arr=new ArrayList<Integer>();
@@ -1849,7 +1850,7 @@ class Solution {
     }
 }
 
-Longest Palindromic Substring
+69)Longest Palindromic Substring
 class Solution {
     public String longestPalindrome(String s) {
     if (s == null || s.length() < 2) {
@@ -1874,7 +1875,7 @@ class Solution {
 }
 
 
-Regular Expression Matching
+70)Regular Expression Matching
 import java.util.regex.*;
 class Solution {
     boolean result;
@@ -1890,7 +1891,7 @@ class Solution {
 }
 
 
-Find the Index of the First Occurrence in a String
+71)Find the Index of the First Occurrence in a String
 class Solution {
     public int strStr(String haystack, String needle) {
         return haystack.indexOf(needle);
@@ -1898,7 +1899,7 @@ class Solution {
 }
 
 
-Multiply Strings
+72)Multiply Strings
 
 import java.math.BigInteger;
 
@@ -1912,7 +1913,7 @@ class Solution {
 }
 
 
-ARRANGE A LINKED LIST IN ASSENDING ORDER:
+73)ARRANGE A LINKED LIST IN ASSENDING ORDER:
 
 class Solution {
     public ListNode sortList(ListNode head) {
@@ -1934,7 +1935,7 @@ class Solution {
 }
 
 
-Maximum Twin Sum of a Linked List
+74)Maximum Twin Sum of a Linked List
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -1961,7 +1962,7 @@ class Solution {
     }
 }
 
- Happy Number
+75) Happy Number
 class Solution {
    class Solution {
     public boolean isHappy(int n) {
@@ -1989,7 +1990,7 @@ class Solution {
 }
 
 
-MAJORITY ELEMENTS IN ARRAY:
+76)MAJORITY ELEMENTS IN ARRAY:
 import java.util.*;
 class Main {
     public static List<Integer> majorityElement(int[] nums) {
@@ -2017,3 +2018,44 @@ class Main {
         System.out.println(majorityElement(arr));
     }
 }
+
+77) Best Time to Buy and Sell Stock
+class Solution {
+    public int maxProfit(int[] prices) {
+        // int buy=0;
+        // int sell=0;
+        // int i=0;
+        // int max=0;
+        // int n=prices.length;
+        // while(i<n-1){
+        //     while(i<n-1 && prices[i]>=prices[i+1]){
+        //         i++;
+        //     }
+        //     buy=i;
+        //     while(i==n-1){
+        //         break;
+        //     }
+        //     while(i<n-1 && prices[i]<=prices[i+1]){
+        //         i++;
+        //     }
+        //     sell=i;
+        //     if(max<prices[sell]-prices[buy]){
+        //         max=prices[sell]-prices[buy];
+        //     }
+        // }
+        // return max;
+
+        int buy = Integer.MAX_VALUE; // Initialize buy with maximum possible value
+        int maxProfit = 0; // Initialize maxProfit with 0
+
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] < buy) {
+                buy = prices[i]; // Update the buying price if we find a lower price
+            } else if (prices[i] - buy > maxProfit) {
+                maxProfit = prices[i] - buy; // Update maxProfit if we find a higher selling price
+            }
+        }
+
+        return maxProfit;
+    }
+}//this is an another easy method
