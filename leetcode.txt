@@ -2701,7 +2701,9 @@ class Solution {
     }
 
     public void traversal(int m, int n, int[][] a, List<Integer> arr) {
-        int i, k = 0, l = 0;
+        int i;
+        int k = 0;//start of row
+        int l = 0;//start of column
 
         while (k < m && l < n) {
             for (i = l; i < n; ++i) {
