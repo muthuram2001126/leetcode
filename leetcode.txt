@@ -2691,3 +2691,42 @@ class Solution {
         return nums[nums.length-k];
     }
 }
+
+97)spiral matrix
+class Solution {
+    public List<Integer> spiralOrder(int[][] matrix) {
+        List<Integer> arr = new ArrayList<>();
+        traversal(matrix.length, matrix[0].length, matrix, arr);
+        return arr;
+    }
+
+    public void traversal(int m, int n, int[][] a, List<Integer> arr) {
+        int i, k = 0, l = 0;
+
+        while (k < m && l < n) {
+            for (i = l; i < n; ++i) {
+                arr.add(a[k][i]);
+            }
+            k++;
+
+            for (i = k; i < m; ++i) {
+                arr.add(a[i][n - 1]);
+            }
+            n--;
+
+            if (k < m) {
+                for (i = n - 1; i >= l; --i) {
+                    arr.add(a[m - 1][i]);
+                }
+                m--;
+            }
+
+            if (l < n) {
+                for (i = m - 1; i >= k; --i) {
+                    arr.add(a[i][l]);
+                }
+                l++;
+            }
+        }
+    }
+}//see geeks for geeks solution and video to understand
