@@ -2637,3 +2637,49 @@ class Solution {
         }
     }
 }
+
+
+95)Set Matrix Zeroes
+class Solution {
+    public void setZeroes(int[][] matrix) {
+        // ArrayList<ArrayList<Integer>> arr=new ArrayList<ArrayList<Integer>>();
+        // for(int i=0;i<matrix.length;i++){
+        //     for(int j=0;j<matrix[0].length;j++){
+        //         if(matrix[i][j]==0){
+        //             ArrayList<Integer> temp=new ArrayList<>();
+        //             temp.add(i);
+        //             temp.add(j);
+        //             arr.add(temp);
+        //         }
+        //     }
+        // }
+        // for(int i=0;i<arr.size();i++){
+        //     ArrayList<Integer> temp=arr.get(i);
+        
+        //     Arrays.fill(matrix[temp.get(0)],0);
+        //     int col = temp.get(1);
+        //     for (int j = 0; j < matrix.length; j++) {
+        //         matrix[j][col] = 0;
+        //     }
+        // }
+        HashSet<Integer> iset = new HashSet<>();
+        HashSet<Integer> jset = new HashSet<>();
+        for(int i  = 0; i<matrix.length;i++){
+            for(int j = 0; j<matrix[i].length;j++){
+                if(matrix[i][j]==0){
+                    iset.add(i);
+                    jset.add(j);
+                }
+            }
+        }
+        for(int i = 0; i<matrix.length;i++){
+            for(int j = 0; j<matrix[i].length;j++){
+                if(iset.contains(i)|| jset.contains(j)){
+                    matrix[i][j] = 0;
+                }
+                
+            }
+            
+        }
+    }
+}//both are correct but the last one is more easier.
