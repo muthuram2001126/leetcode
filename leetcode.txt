@@ -2469,3 +2469,152 @@ class Solution {
         return minLength != Integer.MAX_VALUE ? minLength : 0;
     }
 }
+
+92)Minimum Window Substring(hard)
+class Solution {
+    public String minWindow(String s, String t) {
+
+        ArrayList<String> str = new ArrayList<String>();
+        for (int i = 0; i < s.length(); i++) {
+            for (int j = i + 1; j <= s.length(); j++) {
+                String temp = s.substring(i, j);
+                if (temp.length() >= t.length()) {
+                    str.add(temp);
+                }
+            }
+        }
+        ArrayList<String> result = new ArrayList<String>();
+        char[] temp3 = t.toCharArray();
+        Arrays.sort(temp3);
+        String T = String.valueOf(temp3);
+        for (int i = 0; i < str.size(); i++) {
+            char[] temp2 = str.get(i).toCharArray();
+            Arrays.sort(temp2);
+            String temp4 = String.valueOf(temp2);
+            if (doesContains(temp4, T)) {
+                result.add(str.get(i));
+            }
+        }
+        int res = Integer.MAX_VALUE;
+        String r = "";
+        for (int i = 0; i < result.size(); i++) {
+            if (result.get(i).length() < res) {
+                res = result.get(i).length();
+                r = result.get(i);
+            }
+        }
+        return r;
+    }
+    
+    private boolean doesContains(String str, String substr) {
+        StringBuilder str1=new StringBuilder(str);
+        StringBuilder substr1=new StringBuilder(substr);
+        for(int i=0;i<substr1.length();i++){
+            String temp=String.valueOf(substr1.charAt(i));
+            if(str1.indexOf(temp)==-1){
+                return false;
+                // str1.deleteCharAt(str1.indexOf(temp));
+            }
+            str1.deleteCharAt(str1.indexOf(temp));
+        }
+        return true;
+    }
+}
+
+93)Substring with Concatenation of All Words
+class Solution {
+    public List<Integer> findSubstring(String s, String[] words) {
+        // ArrayList<String> arr=new ArrayList<String>();
+        // for(int i=0;i<words.length;i++){
+        //     for(int j=0;j<words.length;j++){
+        //         if(i==j){
+        //             continue;
+        //         }
+        //         String str=words[i]+words[j];
+        //         arr.add(str);
+        //     }
+        // }
+        // ArrayList<Integer> temp=new ArrayList<Integer>();
+        // for(int i=0;i<arr.size();i++){
+        //     temp.add(s.indexOf(arr.get(i)));
+        // }
+        // for(int j=0;j<temp.size();j++){
+        //     if(temp.get(j)==-1 ){
+        //         temp.remove(j);
+        //     }
+        // }
+        // // temp.remove(Integer.valueOf(-1));
+        // System.out.println(temp);
+        // return temp;
+
+        List<Integer> result = new ArrayList<>();
+        if (s == null || s.length() == 0 || words == null || words.length == 0) {
+            return result;
+        }
+
+        int wordLength = words[0].length();
+        int totalWords = words.length;
+        int totalLength = wordLength * totalWords;
+
+        HashMap<String, Integer> wordCountMap = new HashMap<>();
+        for (String word : words) {
+            wordCountMap.put(word, wordCountMap.getOrDefault(word, 0) + 1);
+        }
+
+        for (int i = 0; i <= s.length() - totalLength; i++) {
+            HashMap<String, Integer> tempMap = new HashMap<>(wordCountMap);
+            int j = i;
+            int count = totalWords;
+
+            while (count > 0) {
+                String currWord = s.substring(j, j + wordLength);
+
+                if (!tempMap.containsKey(currWord) || tempMap.get(currWord) == 0) {
+                    break;
+                }
+
+                tempMap.put(currWord, tempMap.get(currWord) - 1);
+                count--;
+                j += wordLength;
+            }
+
+            if (count == 0) {
+                result.add(i);
+            }
+        }
+
+        return result;
+    }
+}
+
+
+// class Solution {
+//     boolean isConcatenation(Map<String, Integer> wanted, String str, int n, int l, int r) {
+//         Map<String, Integer> m = new HashMap<>();
+//         while (l < r) {
+//             String substring = str.substring(l, l+n);
+//             int w_count = wanted.getOrDefault(substring, -1);
+//             int count = m.getOrDefault(substring, 0) + 1;
+            
+//             if(count > w_count) return false;
+//             m.put(substring, count);
+//             l += n;
+//         }
+//         return true;
+//     }
+
+//     public List<Integer> findSubstring(String s, String[] words) {
+//         int len = words[0].length(), n = words.length * len;
+//         Map<String, Integer> m = new HashMap<>();
+//         List<Integer> ans = new ArrayList<>();
+
+//         for(String word: words)
+//             m.put(word, m.getOrDefault(word, 0)+1);
+
+//         for(int i=0; i+n<=s.length(); i++) {
+//             if(!isConcatenation(m, s, len, i, i+n)) continue;
+//             ans.add(i);
+//         }
+//         return ans;
+//     }
+// }
