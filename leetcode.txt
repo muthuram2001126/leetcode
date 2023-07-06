@@ -2813,3 +2813,49 @@ class Solution {
         return true;
     }
 }
+
+
+101)word pattern
+class Solution {
+    public boolean wordPattern(String pattern, String s) {
+  
+        int[] arr=new int[pattern.length()];
+        HashMap<Character,Integer> map=new HashMap<>();
+        int j=1;
+        for(int i=0;i<pattern.length();i++){
+            // map.put(pattern.charAt(i),map.getOrDefault(pattern.charAt(i),0)+1);
+            if(!map.containsKey(pattern.charAt(i))){
+                map.put(pattern.charAt(i),j);
+                j++;
+            }
+        }
+        for(int i=0;i<pattern.length();i++){
+            arr[i]=map.get(pattern.charAt(i));
+        }
+
+        String[] str=s.split(" ");
+        if(pattern.length()!=str.length){
+            return false;
+        }
+        int[] arr2=new int[str.length];
+        HashMap<String,Integer> map2=new HashMap<>();
+        int k=1;
+        for(int i=0;i<str.length;i++){
+            if(!map2.containsKey(str[i])){
+                map2.put(str[i],k);
+                k++;
+            }
+        }
+        for(int i=0;i<str.length;i++){
+            arr2[i]=map2.get(str[i]);
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != arr2[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+    
