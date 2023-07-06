@@ -2878,3 +2878,67 @@ class Solution {
 
     }
 }
+
+
+103)group anagram
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        // ArrayList<String> arr=new ArrayList<>();
+        // for(int i=0;i<strs.length;i++){
+        //     char[] temp=strs[i].toCharArray();
+        //     Arrays.sort(temp);
+        //     arr.add(new String(temp));
+        // }
+        // // System.out.println(arr);
+        // HashMap<String,String> map=new HashMap<>();
+        // for(int i=0;i<strs.length;i++){
+        //     map.put(strs[i],arr.get(i));
+        // }
+        // List<List<String>> result=new ArrayList<>();
+        // // String t=""",""";
+        // // if(strs.equals(t))){
+        // //     ArrayList<String> p=new ArrayList<>();
+        // //     p.add("","");
+        // //     result.add(p);
+        // //     return result;
+        // // }
+        // HashSet<String> set=new HashSet<>();
+        // for(String i:map.values()){
+        //     set.add(i);
+        // }
+        // for(String i:set){
+        //     ArrayList<String> temp=new ArrayList<>();
+        //     for(String j:map.keySet()){
+        //         if(i.equals(map.get(j))){
+        //             temp.add(j);
+        //         }
+        //     }
+        //     result.add(temp);
+        // }
+        // // if (set.contains("") && set.size()== 1) {
+        // //     result.add(Arrays.asList(""));
+        // // }
+        // if (set.size() == 1 && set.contains("")) {
+        //     ArrayList<String> emptyStrings = new ArrayList<>();
+        //     for (String str : strs) {
+        //         if (str.isEmpty()) {
+        //             emptyStrings.add(str);
+        //         }
+        //     }
+        //     result.add(emptyStrings);
+        //     return result;
+        // }
+        
+        // return result;
+        if (strs == null || strs.length == 0) return new ArrayList<>();
+        Map<String, List<String>> map = new HashMap<>();
+        for (String s : strs) {
+            char[] ca = s.toCharArray();
+            Arrays.sort(ca);
+            String keyStr = String.valueOf(ca);
+            if (!map.containsKey(keyStr)) map.put(keyStr, new ArrayList<>());
+            map.get(keyStr).add(s);
+        }
+        return new ArrayList<>(map.values());
+    }
+}
