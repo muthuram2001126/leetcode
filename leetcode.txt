@@ -2771,5 +2771,23 @@ class MinStack {
 
  */
 
-
+99)Randsom notes
+class Solution {
+    public boolean canConstruct(String ransomNote, String magazine) {
+        HashMap<Character,Integer> map=new HashMap<Character,Integer>();
+        for(int i=0;i<magazine.length();i++){
+            map.put(magazine.charAt(i),map.getOrDefault(magazine.charAt(i),0)+1);
+        }
+        HashMap<Character,Integer> map2=new HashMap<Character,Integer>();
+        for(int i=0;i<ransomNote.length();i++){
+            map2.put(ransomNote.charAt(i),map2.getOrDefault(ransomNote.charAt(i),0)+1);
+        }
+        for(Character c:map2.keySet()){
+            if(!map.containsKey(c) || map.get(c)<map2.get(c)){
+                return false;
+            }
+        }
+        return true;
+    }
+}
 
