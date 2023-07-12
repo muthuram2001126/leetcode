@@ -3019,3 +3019,38 @@ class Solution {
         
     }
 }
+
+
+107)Rotate List(linked list)
+class Solution {
+    public ListNode rotateRight(ListNode head, int k) {
+        if(head==null || head.next==null || k==0){
+            return head;
+        }
+
+        ListNode temp2 = head;
+        int length = 1;
+        while (temp2.next != null) {
+            temp2 = temp2.next;
+            length++;
+        }
+        
+        k = k % length;
+        if (k == 0) {
+            return head;
+        }
+
+
+        for(int i=0;i<k;i++){
+            ListNode temp=head;
+            while(temp.next.next!=null){
+                temp=temp.next;
+            }
+            ListNode h=temp.next;
+            temp.next=null;
+            h.next=head;
+            head=h;
+        }
+        return head;
+    }
+}
