@@ -2985,3 +2985,37 @@ public class Solution {
         return r;
     }
 }
+
+
+106)Remove Duplicates from Sorted List II
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        ListNode temp = new ListNode(0);
+        ListNode dummy = temp;
+        LinkedHashMap<Integer, Integer> map = new LinkedHashMap<>();
+        ListNode temp2 = head;
+        while (temp2 != null) {
+            map.put(temp2.val, map.getOrDefault(temp2.val, 0) + 1);
+            temp2 = temp2.next; // Add this line to update temp2
+        }
+        for (Integer m : map.keySet()) {
+            if (map.get(m) == 1) {
+                dummy.next = new ListNode(m);
+                dummy = dummy.next;
+            }
+        }
+        return temp.next;
+
+        
+    }
+}
