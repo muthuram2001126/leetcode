@@ -3080,3 +3080,71 @@ class Solution {
         return leftHead.next;
     }
 }
+
+109)valid binary search tree(very easy)
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    private TreeNode prev; // To track previously visited node
+    
+    public boolean isValidBST(TreeNode root) {
+        prev = null; // Initialize prev
+        
+        return inorderTraversal(root);
+    }
+    
+    private boolean inorderTraversal(TreeNode node) {
+        if (node == null) {
+            return true;
+        }
+        
+        // Traverse left subtree
+        if (!inorderTraversal(node.left)) {
+            return false;
+        }
+     
+        
+        // Check if current node violates BST property
+        if (prev != null && prev.val >= node.val) {
+            return false;
+        }
+        
+        prev = node; // Update prev
+        
+        // Traverse right subtree
+        return inorderTraversal(node.right);
+    }
+
+    // ArrayList<Integer> arr=new ArrayList<>();
+    // public boolean isValidBST(TreeNode node){
+    //     check(node);
+    //     for (int i = 1; i < arr.size(); i++) {
+    //         if (arr.get(i) <= arr.get(i - 1)) {
+    //             return false;
+    //         }
+    //     }
+    //     return true;
+    // }
+    // public void check(TreeNode node){
+    //     if(node==null){
+    //         return;
+    //     }
+    //     check(node.left);
+    //     arr.add(node.val);
+    //     check(node.right);
+    // } //other way more time complexity to find whether a give bt is a bst we need to add elements of it 
+    //to an array using inorder traversal then check whether they are sorted if yes it is a bst or it is not
+}
