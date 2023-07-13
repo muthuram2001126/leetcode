@@ -3176,3 +3176,33 @@ class Solution {
         return leftSum + rightSum;
     }
 }
+
+11)Minimum Absolute Difference in BST
+class Solution {
+    public int count = Integer.MAX_VALUE;
+    public TreeNode prev = null;
+    
+    public int getMinimumDifference(TreeNode root) {
+        inorderTraversal(root);
+        return count;
+    }
+    
+    private void inorderTraversal(TreeNode node) {
+        if (node == null) {
+            return;
+        }
+        
+        // Traverse left subtree
+        inorderTraversal(node.left);
+        
+        // Check the minimum difference with the previous node
+        if (prev != null) {
+            count = Math.min(count, Math.abs(prev.val - node.val));
+        }
+        
+        prev = node; // Update prev
+        
+        // Traverse right subtree
+        inorderTraversal(node.right);
+    }
+}
