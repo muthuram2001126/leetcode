@@ -3106,7 +3106,7 @@ class Solution {
         return inorderTraversal(root);
     }
     
-    private boolean inorderTraversal(TreeNode node) {
+    private boolean inorderTraversal(TreeNode node) {//if u dont understand see video https://youtu.be/M-wzMrvsHQ0
         if (node == null) {
             return true;
         }
