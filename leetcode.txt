@@ -3177,7 +3177,7 @@ class Solution {
     }
 }
 
-11)Minimum Absolute Difference in BST
+111)Minimum Absolute Difference in BST
 class Solution {
     public int count = Integer.MAX_VALUE;
     public TreeNode prev = null;
@@ -3206,3 +3206,33 @@ class Solution {
         inorderTraversal(node.right);
     }
 }
+
+112)number of islands(very easy)
+
+class Solution {
+    public int numIslands(char[][] grid) {
+        int count = 0;
+        
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                if (grid[i][j] == '1') {
+                    count++;
+                    clearRestOfLand(grid, i, j);
+                }
+            }
+        }
+        return count;
+    }
+    
+    private void clearRestOfLand(char[][] grid, int i, int j) {
+        if (i < 0 || j < 0 || i >= grid.length || j >= grid[i].length || grid[i][j] == '0') return;
+        
+        grid[i][j] = '0';
+        clearRestOfLand(grid, i+1, j);//bottom
+        clearRestOfLand(grid, i-1, j);//top
+        clearRestOfLand(grid, i, j+1);//right
+        clearRestOfLand(grid, i, j-1);//left
+   
+    }
+}//this is easy kela erukura clearRestOfLand is a recursive function edhu epo ovvona ella element kita pogu bodhu
+//for each element bottom,top,right,left ah 0 panirum so atlast for the give two qn ans 1 dha but incase connection ellama thaniya erukuradha nama 0 panna mudiyadhu so adha kandu pudikum bodhu adhu laum recursion sepeater ah nadakum 
