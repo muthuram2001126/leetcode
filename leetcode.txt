@@ -3429,3 +3429,41 @@ class Solution {
         return hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val);
     }
 }
+
+122)Maximum Twin Sum of a Linked List
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public int pairSum(ListNode head) {
+
+
+        ListNode temp=head;
+        ArrayList<Integer> arr=new ArrayList<Integer>();
+        while(temp!=null){
+            arr.add(temp.val);
+            temp=temp.next;
+        }
+
+        int i=0;
+        int j=arr.size()-1;
+        ArrayList<Integer> arr2=new ArrayList<>();
+        while(i<j){
+            int sum=arr.get(i)+arr.get(j);
+            arr2.add(sum);
+            i++;
+            j--;
+        }
+        Collections.sort(arr2);
+        return arr2.get(arr2.size()-1);
+   
+    }
+}
+// THIS CODE IS CORRECT LEARN
